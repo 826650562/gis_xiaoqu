@@ -1,23 +1,23 @@
-var webMercatorUtils = dojo.require("esri.geometry.webMercatorUtils");
+dojo.require("esri.geometry.webMercatorUtils");
 var MLZ = {
 	baseMapUrl:"http://116.236.96.146:6080/arcgis/rest/services/BJ_ZT/MapServer",
 	isSwitchPoint : true,
-
+	
 	/**
 	 * 转换为魔卡托坐标系
 	 */
 	ToWebMercator : function(geometry) {
-		return webMercatorUtils.geographicToWebMercator(geometry);
+		return esri.geometry.geographicToWebMercator(geometry);
 	},
 	/*
 	 * 魔卡托坐标系转地理坐标系
 	 * */
 	MercatorToGeo : function(geometry) {
-		return webMercatorUtils.webMercatorToGeographic(geometry);
+		return esri.geometry.webMercatorToGeographic(geometry);
 	},
 
 	ToWebMercator2 : function(long, lat) {
-		return webMercatorUtils.lngLatToXY(long, lat);
+		return esri.geometry.lngLatToXY(long, lat);
 	},
 	/*
 	 * 百度坐标系转国测局
